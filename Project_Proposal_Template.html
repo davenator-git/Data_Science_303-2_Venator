@@ -2601,7 +2601,7 @@ vertical-align: -.125em;
 <h1>4) Topic</h1>
 <p>Mention the topic of your course project.</p>
 <p><em>(0.25 points)</em></p>
-<p>Yearly cost of healthcare</p>
+<p>Predicting whether or not Titanic passengers will survive.</p>
 </section>
 <section id="problem-statement" class="level1">
 <h1>5) Problem statement</h1>
@@ -2620,6 +2620,12 @@ vertical-align: -.125em;
 <li>What techniques do you think you may need to use to improve your model? If you have too many variables, some of which are correlated or collinear, you may need to do variable selection <em>(techniques for variable selection that you will learn later in the course - stepwise regression, lasso, ridge regression)</em>. If the variables do not have a linear relationship with the response, or if some of the modeling assumptions are not satisfied, you may need to transform the predictors and/or the response (variable transformation) to obtain a better fit.</li>
 </ol>
 <p><em>(5 points)</em></p>
+<p>New answer:</p>
+<p>We would like to predict the survival of the passengers on the Titanic based on features of the passengers such as their class, gender, port of embarkation, cabin number, cost of fare, relatives on board, and age. This is a classification problem because we want to figure out whether or not the passengers survived, a qualitative response. This is more of an inference problem since we don’t want to necessarily predict future deaths of passengers of the Titanic, something that won’t happen again, but instead understand how each indepedent variable impacts the likelihood of that passenger dying.</p>
+<p>Since this is a classification problem, we obviously want to minimize the classification error rate, and hopefully achieve a model of at least 95% accuracy. Since we are not using this data to make any future predictions, we aren’t necessarily interested in precision, recall, FNR, or TPR.</p>
+<p>To improve our model, we will most likely perform variable selection, analyze multicollinearity, analyze residuals, outliers, and high leverage points to figure out if any transformations are needed.</p>
+<p>…</p>
+<p>Old answer:</p>
 <p>We would like to predict the annual expenditure of a healthcare insurance customer based on their age, sex, body mass index, number of children, whether or not they are a smoker, and region in the US. To make this prediction, we will use a regression model. To assess the accuracy of the model, we will train on a random 75% of the data and test on the remaining 25%.</p>
 <p>To optimize the regression model, we will use MAE as outliers don’t need to be punished as heavily. We assume most outliers will be above the average cost, so the outliers might lead to slight overprediction, which would not harm the insurance company.</p>
 <p>Because different regions will probably have an effect on the medical insurance bill (medical bills probably more expensive in California vs Kentucky, for instance), we may need to do some effect subtraction or transformation in order to remove those effects and be able to predict whether or other variables have a larger impact as well.</p>
@@ -2629,28 +2635,30 @@ vertical-align: -.125em;
 <p>What data sources will you use, and how will the data help answer the questions? Explain.</p>
 <p>If the data is open source, share the link of the data.</p>
 <p><em>(1 point)</em></p>
-<p>The data source we are using is a health insurance payment dataset from Kaggle. The dataset has variables such as the age, customers sex, number of kids, whether they smoke or not, BMI, the region they are from and the amount they cost the health insurance in a year. Using all the variables mentioned, we can build a model to predict how much the insurance can expect to pay for a new client, knowing their kids, smoking habits, …</p>
-<p>https://www.kaggle.com/datasets/harshsingh2209/medical-insurance-payout</p>
+<p>https://www.kaggle.com/competitions/titanic/data?select=test.csv</p>
 </section>
 <section id="stakeholders" class="level1">
 <h1>7) Stakeholders</h1>
 <p>Who are the stakeholders, and how will your project benefit them? Explain.</p>
 <p><em>(1 point)</em></p>
-<p>The primary stakeholder is hospitals, and patients. The ability to predict how much a new patient will likely cost the hospital over the course of the year will allow them to set premiums and design their coverage to meet their needs. This will allow patients to be in plans that best fit their health needs. It will also allow patients to understand and possibly contest the methodology used to set their premiums, and make their coverage more equitable.</p>
+<p>We are mostly interested in understanding the background of a historical event, and if certain factors like sex or class could have decided on a person’s life. This would help honor the victims of this tragic accident.</p>
+<p>Additionally, for someone paranoid and scared of boatrides, it might help them feel prepared if they knew what helped people survive on the Titanic, so they could improve their chances of survival through fare, cabin placement, etc. as well</p>
 </section>
 <section id="results" class="level1">
 <h1>8) Results</h1>
 <p>What kind of results do you expect?</p>
-<p>We expect older patients, smokers, patients with higher BMI, and more children will have higher insurance payouts. *** How much accuracy is required / desired in your model (based on the metric(s) chosen in question 5), such that it is useful to the stakeholders and why?</p>
+<hr>
+<p>How much accuracy is required / desired in your model (based on the metric(s) chosen in question 5), such that it is useful to the stakeholders and why?</p>
 <p><strong>Hint:</strong> If it is a classification model, then your model must be at least better than random classification. If it is a regression model, then your model must be at least better than trivial models, such as the one with only the intercept term.</p>
-<p>We would like to have an MAE in a range of 500-1200, as most of the charge seems to lay in 10 000-25000 range, so the error would only make up ~5-10% of the charge, which would be a valid prediction.</p>
+<p>Genrally, we are expecting that women, and people in higher paying faires would have higher survival rates.</p>
+<p>Regarding accurcay, we will try to build a model that has a 95% accurcay. As there is about a 40% survival rate from the data, which makes the outcome relatively balanced, we think that should be sufficient, as the model could not just get a high accuracy by</p>
 <p><em>(0.5 point)</em></p>
 </section>
 <section id="work-split" class="level1">
 <h1>9) Work-split</h1>
 <p>How do you plan to split the project work amongst individual team members?</p>
 <p><em>(0.25 point)</em></p>
-<p>We plan on having 2 people do exploratory data analysis, one person making various models, and one person doing error and regression analysis on those models.</p>
+<p>We plan on having 1 person doing exploratory data analysis, two people making various models, and one person doing error and regression analysis on those models.</p>
 </section>
 
 </main>
