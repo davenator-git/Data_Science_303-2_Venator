@@ -2606,7 +2606,6 @@ vertical-align: -.125em;
 </section>
 <section id="data-sources" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">3</span> Data sources</h2>
-<p>What data did you use? Provide details about your data. Include links to data if you are using open-access data.</p>
 <p>The data we used is a Kaggle dataset found at this link: https://www.kaggle.com/competitions/titanic/data?select=test.csv <br> <br> Our variable of interest is ‘Survived’ and the rest of the variables were considered as predictors. <br> <br> Variable descriptions: <br> <br> 1. Survived: 0=No, 1=Yes <br> 2. Pclass: 1 = first class, 2 = second class, 3 = third class <br> 3. sibsp: number of siblings and spouses aboard Titanic <br> 4. parch: number of parents and children aboard Titanic <br> 5. ticket: ticket number <br> 6. fare: passenger fare <br> 7. cabin: cabin number <br> 8. embarked: port of embarkation: C = Cherbourg, Q = Queenstown, S = Southampton</p>
 </section>
 <section id="stakeholders" class="level2" data-number="4">
@@ -2617,23 +2616,9 @@ vertical-align: -.125em;
 <section id="data-quality-check-cleaning-preparation" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="data-quality-check-cleaning-preparation"><span class="header-section-number">5</span> Data quality check / cleaning / preparation</h2>
 <p>The following variables were discarded as they did not provide any unique data; they were specific to each passenger - PassengerId - Name - Ticket - Cabin</p>
-<div class="cell" data-execution_count="1">
-<div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\david\anaconda3\lib\site-packages\statsmodels\tsa\base\tsa_model.py:7: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
-  from pandas import (to_datetime, Int64Index, DatetimeIndex, Period,
-C:\Users\david\anaconda3\lib\site-packages\statsmodels\tsa\base\tsa_model.py:7: FutureWarning: pandas.Float64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
-  from pandas import (to_datetime, Int64Index, DatetimeIndex, Period,</code></pre>
-</div>
-</div>
 <p>The frequency for the continuous variables is as follows:</p>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\david\AppData\Local\Temp/ipykernel_2728/743413015.py:1: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-  df = train[[&#39;Age&#39;,&#39;Fare&#39;]].isnull().sum().reset_index().transpose().append(train[[&#39;Age&#39;,&#39;Fare&#39;]].nunique().reset_index().transpose())
-C:\Users\david\AppData\Local\Temp/ipykernel_2728/743413015.py:4: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-  train[[&#39;Age&#39;,&#39;Fare&#39;]].describe().append(df)</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell" data-execution_count="36">
+<div class="cell-output cell-output-display" data-execution_count="36">
 
 <div>
 
@@ -2702,8 +2687,8 @@ C:\Users\david\AppData\Local\Temp/ipykernel_2728/743413015.py:4: FutureWarning: 
 </div>
 </div>
 <p>The frequency table for the categorical variable “Survived”:</p>
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell" data-execution_count="37">
+<div class="cell-output cell-output-display" data-execution_count="37">
 
 <div>
 
@@ -2735,8 +2720,8 @@ C:\Users\david\AppData\Local\Temp/ipykernel_2728/743413015.py:4: FutureWarning: 
 </div>
 </div>
 <p>The frequency table for the categorical variable “Pclass”:</p>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell" data-execution_count="38">
+<div class="cell-output cell-output-display" data-execution_count="38">
 
 <div>
 
@@ -2774,8 +2759,8 @@ C:\Users\david\AppData\Local\Temp/ipykernel_2728/743413015.py:4: FutureWarning: 
 </div>
 </div>
 <p>The frequency table for the categorical variable “Sex”:</p>
-<div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell" data-execution_count="39">
+<div class="cell-output cell-output-display" data-execution_count="39">
 
 <div>
 
@@ -2807,8 +2792,8 @@ C:\Users\david\AppData\Local\Temp/ipykernel_2728/743413015.py:4: FutureWarning: 
 </div>
 </div>
 <p>The frequency table for the categorical variable “SibSp”:</p>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell" data-execution_count="40">
+<div class="cell-output cell-output-display" data-execution_count="40">
 
 <div>
 
@@ -2846,8 +2831,8 @@ C:\Users\david\AppData\Local\Temp/ipykernel_2728/743413015.py:4: FutureWarning: 
 </div>
 </div>
 <p>The frequency table for the categorical variable “Parch”:</p>
-<div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell" data-execution_count="41">
+<div class="cell-output cell-output-display" data-execution_count="41">
 
 <div>
 
@@ -2885,8 +2870,8 @@ C:\Users\david\AppData\Local\Temp/ipykernel_2728/743413015.py:4: FutureWarning: 
 </div>
 </div>
 <p>The frequency table for the categorical variable “Embarked”</p>
-<div class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell" data-execution_count="42">
+<div class="cell-output cell-output-display" data-execution_count="42">
 
 <div>
 
@@ -2925,8 +2910,8 @@ C:\Users\david\AppData\Local\Temp/ipykernel_2728/743413015.py:4: FutureWarning: 
 </div>
 <p>The only data cleaning necessary for this dataset was the values of Age – there were 177 missing values, and there was enough information for me to impute them. In order to impute the 177 values of Age, I decided to run a linear regression on all of the other variables and figure out if there was a model that could reliably predict values of Age. Hence, I made a model with Pclass, Sex, SibSp, Parch, Fare, and Embarked. I did some preliminary data analysis on those 6 variables on Age, and found that there was significant correlation between SibSp, Parch, and Pclass, but not Sex or Embarked. This is probably because Sex and Embarked would have a pretty evenly split age groups. The specific correlations can be seen in the Code section.</p>
 <p>To impute the values, I split the entire training dataset into two: one with all of the ages, and one without all of the ages. I ran my multiple linear regression on the dataset with all of the equations. I also edited the dataframe so that the variables SibSp, Parch, and Pclass were strings instead of integers, in order for the model to read them as categorical variables. I found that doing this improved the R-squared of my model drastically. I believe this is because these three variables only have discrete values (you can’t have 4.5 siblings). I initially used the formula ‘Age~SibSp+Parch+Pclass+Fare’, and performed a residual analysis, as I found the R-squared value of 0.302 to be a bit unsatisfactory.</p>
-<div class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell" data-execution_count="43">
+<div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>Text(0, 0.5, &#39;Residuals&#39;)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
